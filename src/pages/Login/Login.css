@@ -23,7 +23,7 @@
 .box {
     position: relative;
     width: 380px;
-    height: 520px;
+    height: 550px;
     background: #1c1c1c;
     border-radius: 8px;
     overflow: hidden;
@@ -160,7 +160,7 @@ input[type="submit"] {
     border: none;
     outline: none;
     background: var(--color);
-    padding: 11px 25px;
+    padding: 4px 25px;
     width: 100px;
     margin-top: 10px;
     border-radius: 4px;
@@ -170,4 +170,19 @@ input[type="submit"] {
 
 input[type="submit"]:active {
     opacity: 0.8;
+}
+
+.g-signin {
+    color: white;
+    cursor: pointer;
+    padding: 7px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.g-signin:hover {
+    background-color: var(--color);
+    color: #23242a;
+    transition: ease-in 0.3s;
 }

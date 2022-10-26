@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import './Rejister.css'
 
 const Rejister = () => {
+
+    const { creatUser } = useContext(AuthContext);
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -10,8 +13,18 @@ const Rejister = () => {
         const email = form.email.value;
         const password = form.password.value;
 
-        console.log(name, email, password)
-        form.reset();
+        console.log(email, password)
+        creatUser(email, password).then(result => {
+            const user = result.user;
+            console.log(user);
+            form.reset();
+        })
+            .catch(e => {
+                console.error(e)
+                form.reset();
+            });
+
+
     }
 
     return (
@@ -40,9 +53,9 @@ const Rejister = () => {
 
                     <div class="links">
                         <a href="#"> Forgot Password</a>
-                        <a href="#">Signup</a>
+                        <a href="#">have an account</a>
                     </div>
-                    <input type="submit" value="Login" />
+                    <input type="submit" value="Signup" />
                 </form>
             </div>
 

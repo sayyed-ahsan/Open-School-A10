@@ -1,18 +1,16 @@
+import { RouterProvider } from 'react-router-dom';
 import './App.css';
 import Main from './layout/Main';
 import Header from './pages/Header/Header';
 import Login from './pages/Login/Login';
 import Rejister from './pages/Login/Rejister';
+import { routes } from './Routes/Routes/Routes';
+
 
 
 function App() {
   return (
-    <div>
-      <Header></Header>
-      <Main></Main>
-      <Rejister></Rejister>
-      <Login></Login>
-    </div>
+    <RouterProvider router={routes}></RouterProvider>
   );
 }
 

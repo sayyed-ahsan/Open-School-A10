@@ -2,7 +2,7 @@ import React from 'react';
 
 const LeftNavigation = () => {
     return (
-        <div>
+        <div className='left-navigation'>
             <h1>Left navigation</h1>
         </div>
     );
