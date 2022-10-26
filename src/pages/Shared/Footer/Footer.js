@@ -4,7 +4,7 @@ import { CDBFooter, CDBFooterLink, CDBBtn, CDBIcon, CDBContainer } from 'cdbreac
 const Footer = () => {
     return (
         <div>
-
+            footer
         </div>
     );
 };
