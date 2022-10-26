@@ -5,6 +5,7 @@ import Course from "../../pages/Course/Course/Course";
 import Login from "../../pages/Login/Login";
 import Rejister from "../../pages/Login/Rejister";
 import Home from "../../Home/Home";
+import PageNotFound from "../../pages/PageNotFound/PageNotFound";
 
 export const routes = createBrowserRouter([
     {
@@ -14,7 +15,6 @@ export const routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('https://dragon-news-server-seven.vercel.app/news')
             },
             {
                 path: '/course',
@@ -31,6 +31,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/signup',
                 element: <Rejister></Rejister>
+            },
+            {
+                path: '/*',
+                element: <PageNotFound></PageNotFound>
             }
         ]
     }
