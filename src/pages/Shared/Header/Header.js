@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { FaUserCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import { AiFillRead } from 'react-icons/ai';
 
 import './Header.css'
 
@@ -19,10 +20,10 @@ const Header = () => {
 
             <nav class="navbar bg-light">
                 <div class="container-fluid">
-                    <Link className='logo mx-5' to={'/'}><h1>Logo</h1></Link>
+                    <Link className='logo mx-5' to={'/'}><h1><AiFillRead></AiFillRead> Open Mind School</h1></Link>
                     <form class="d-flex" role="search">
                         <Link className='header-links mx-3' to={'/'}>Home</Link>
-                        <Link className='header-links mx-3' to={'/course'}>Course</Link>
+                        <Link className='header-links mx-3' to={'/course'}>Courses</Link>
                         <Link className='header-links mx-3' to={'/blog'}>Blog</Link>
                         {
                             user ?

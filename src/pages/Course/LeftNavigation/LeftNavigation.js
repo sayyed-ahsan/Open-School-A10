@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const LeftNavigation = () => {
+const LeftNavigation = ({ course }) => {
     return (
-        <div className='left-navigation'>
-            <h1>Left navigation</h1>
+        <div className='left-navigation text-center'>
+            <Link to={`deatils/${course.id}`} className='Rout-links'><span >{course.name}</span></Link>
         </div>
     );
 };

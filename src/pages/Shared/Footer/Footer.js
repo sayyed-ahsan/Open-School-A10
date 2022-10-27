@@ -1,10 +1,10 @@
 import React from 'react';
-import { CDBFooter, CDBFooterLink, CDBBtn, CDBIcon, CDBContainer } from 'cdbreact';
+import './Footer.css'
 
 const Footer = () => {
     return (
         <div>
-            footer
+
         </div>
     );
 };
