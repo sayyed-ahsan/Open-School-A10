@@ -20,27 +20,39 @@ const Header = () => {
 
             <nav class="navbar bg-light">
                 <div class="container-fluid">
-                    <Link className='logo mx-5' to={'/'}><h1><AiFillRead></AiFillRead> Open Mind School</h1></Link>
+                    <Link className='logo mx-5 site-name' to={'/'}><h2><AiFillRead></AiFillRead> Open School</h2></Link>
                     <form class="d-flex" role="search">
-                        <Link className='header-links mx-3' to={'/'}>Home</Link>
-                        <Link className='header-links mx-3' to={'/course'}>Courses</Link>
-                        <Link className='header-links mx-3' to={'/blog'}>Blog</Link>
+                        <Link className='header-links mx-3 n-link' to={'/'}>Home</Link>
+                        <Link className='header-links mx-3 n-link' to={'/course'}>Courses</Link>
+                        <Link className='header-links mx-3 n-link' to={'/blog'}>Blog</Link>
                         {
                             user ?
                                 <>
                                     {user.photoURL === null ?
                                         <FaUserCircle className='my-auto'></FaUserCircle>
-                                        : <img className='profile-img' src={user.photoURL} alt="" />
+                                        :
+                                        <div className='name-parent'>
+                                            <img className='profile-img' src={user.photoURL} alt="" />
+                                            <p className='name-p'>{user.displayName}</p>
+                                        </div>
                                     }
-                                    <button className='button-signout' onClick={handleSignOut}>Sign Out</button>
+                                    <Link className='header-links mx-3 n-link'><span onClick={handleSignOut}>Sign Out</span></Link>
                                 </>
                                 :
                                 <>
-                                    <Link className='header-links mx-3' to={'/login'}>Login</Link>
-                                    <Link className='header-links mx-3' to={'/signup'}>Signup</Link>
+                                    <Link className='header-links mx-3 n-link' to={'/login'}>Login</Link>
+                                    <Link className='header-links mx-3 n-link' to={'/signup'}>Signup</Link>
                                 </>
+
                         }
+
+                        <label class="switch">
+                            <input type="checkbox" />
+                            <span class="slider round"></span>
+                        </label>
+
                     </form>
+
                 </div>
             </nav>
 
