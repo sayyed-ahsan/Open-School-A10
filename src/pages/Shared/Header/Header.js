@@ -19,9 +19,9 @@ const Header = () => {
         <div>
 
             <nav class="navbar bg-light">
-                <div class="container-fluid">
-                    <Link className='logo mx-5 site-name' to={'/'}><h2><AiFillRead></AiFillRead> Open School</h2></Link>
-                    <form class="d-flex" role="search">
+                <div class="container-fluid d-flex flex-column flex-md-row mx-md-4">
+                    <Link className='logo site-name' to={'/'}><h2><AiFillRead></AiFillRead> Open School</h2></Link>
+                    <form class="d-flex flex-column flex-sm-row justify-content-center align-items-center " role="search">
                         <Link className='header-links mx-3 n-link' to={'/'}>Home</Link>
                         <Link className='header-links mx-3 n-link' to={'/course'}>Courses</Link>
                         <Link className='header-links mx-3 n-link' to={'/blog'}>Blog</Link>

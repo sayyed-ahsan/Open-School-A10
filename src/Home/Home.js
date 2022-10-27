@@ -3,7 +3,7 @@ import React from 'react';
 import img1 from '../../src/images/online_courses.jpeg';
 import img2 from '../../src/images/Onlinelearning.jpg';
 import img3 from '../../src/images/badii.jpg';
-import Footer from '../pages/Shared/Footer/Footer';
+import { Link } from 'react-router-dom';
 
 
 const Home = () => {
@@ -17,24 +17,27 @@ const Home = () => {
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="10000">
-                        <img src={img1} class="d-block h-75 w-100" alt="..." />
+                        <div className='opacity-50 b-igm '><img src={img1} class="d-block h-75 w-100" alt="..." /></div>
                         <div class="carousel-caption d-none d-md-block">
+                            <Link to={'/course'}><button type="button" class="btn btn-outline-info">Courses</button></Link>
                             <h5>First slide label</h5>
-                            <p>Some representative placeholder content for the first slide.</p>
+                            <p className='fs-3'>Learning new things gives us a feeling of accomplishment which, in turn, boosts our confidence in our own capabilities</p>
                         </div>
                     </div>
                     <div class="carousel-item" data-bs-interval="2000">
-                        <img src={img2} class="d-block h-75 w-100" alt="..." />
+                        <div className='opacity-50 b-igm'><img src={img2} class="d-block h-75 w-100" alt="..." /></div>
                         <div class="carousel-caption d-none d-md-block">
+                            <Link to={'/course'}><button type="button" class="btn btn-outline-info">Courses</button></Link>
                             <h5>Second slide label</h5>
-                            <p>Some representative placeholder content for the second slide.</p>
+                            <p className='fs-3'>Learning new things gives us a feeling of accomplishment which, in turn, boosts our confidence in our own capabilities</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src={img3} class="d-block h-75 w-100" alt="..." />
+                        <div className='opacity-50 b-igm'><img src={img3} class="d-block h-75 w-100" alt="..." /></div>
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>Third slide label</h5>
-                            <p>Some representative placeholder content for the third slide.</p>
+                            <Link to={'/course'}><button type="button" class="btn btn-outline-info">Courses</button></Link>
+                            <h4 className='fs-4'>Please purches our course</h4>
+                            <p className='fs-3'>Learning new things gives us a feeling of accomplishment which, in turn, boosts our confidence in our own capabilities</p>
                         </div>
                     </div>
                 </div>

@@ -112,3 +112,7 @@ input:checked+.slider:before {
 .name-parent:hover .name-p {
     visibility: visible;
 }
+
+.b-ig {
+    max-height: 550px;
+}

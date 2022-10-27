@@ -6,10 +6,10 @@ import CourseDetails from "../../pages/Course/Courses/CourseDetails";
 import Courses from "../../pages/Course/Courses/Courses";
 import Login from "../../pages/Login/Login";
 import Rejister from "../../pages/Login/Rejister";
-import Home from "../../Home/Home";
 import PageNotFound from "../../pages/PageNotFound/PageNotFound";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import CheckOut from "../../pages/Course/CheckOut/CheckOut";
+import Home from "../../Home/Home";
 
 export const routes = createBrowserRouter([
     {
