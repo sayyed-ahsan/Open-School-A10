@@ -1,10 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import './Rejister.css'
 
 const Rejister = () => {
 
     const { creatUser } = useContext(AuthContext);
+    const [error, setError] = useState('');
+
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -18,10 +21,13 @@ const Rejister = () => {
             const user = result.user;
             console.log(user);
             form.reset();
+            setError('');
         })
             .catch(e => {
                 console.error(e)
                 form.reset();
+                console.error(error.message)
+                setError(error.message)
             });
 
 
@@ -40,6 +46,12 @@ const Rejister = () => {
                     </div>
 
                     <div class="inputbox">
+                        <input type="text" name='' required="required" />
+                        <span>Photo Url </span>
+                        <i></i>
+                    </div>
+
+                    <div class="inputbox">
                         <input type="email" name='email' required="required" />
                         <span>Email </span>
                         <i></i>
@@ -51,10 +63,16 @@ const Rejister = () => {
                         <i></i>
                     </div>
 
-                    <div class="links">
-                        <a href="#"> Forgot Password</a>
-                        <a href="#">have an account</a>
-                    </div>
+                    {error ?
+                        <div class="links">
+                            <a><Link className='text-danger fs-6'>Pleae try Again...!</Link></a>
+                        </div>
+                        :
+                        <div class="links">
+                            <a><Link className='fs-6' to={'/login'}>have an account</Link></a>
+                        </div>
+                    }
+
                     <input type="submit" value="Signup" />
                 </form>
             </div>

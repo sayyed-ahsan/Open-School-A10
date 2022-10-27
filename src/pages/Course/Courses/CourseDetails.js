@@ -1,6 +1,7 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
-import { BsFillFileEarmarkPdfFill } from 'react-icons/bs';
+import { Link, useLoaderData } from 'react-router-dom';
+import { BsFillFileEarmarkPdfFill, BsFillStarFill } from 'react-icons/bs';
+import './CourseDetail.css'
 
 
 const CourseDetails = () => {
@@ -8,14 +9,13 @@ const CourseDetails = () => {
     console.log(courses)
     return (
         <div>
-
-            <div className='p-5 m-5'>
+            <div className='d-flex justify-content-center mt-5 p-3'>
                 <div class="card mb-3 course-detail-div">
                     <div class="row g-0">
                         <div class="col-md-4">
                             <div className='p-3 '>
-                                <div className='border-4 border-info'>
-                                    <img src={courses.img} class="img-fluid rounded-3" alt="..." />
+                                <div className='border-4 d-flex justify-content-center border-info'>
+                                    <img src={courses.img} class="img-fluid mx-auto rounded-3" alt="..." />
                                 </div>
                             </div>
                         </div>
@@ -28,8 +28,14 @@ const CourseDetails = () => {
                                     </div>
                                 </div>
                                 <p class="card-text">{courses.detail}</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                <button type="button" class="btn btn-outline-dark">Get premium access</button>
+                                <p class="card-text"><small class="text-muted">
+                                    <BsFillStarFill className='rating-star'></BsFillStarFill>
+                                    <span className='rating'>{courses.rating}</span>
+                                </small></p>
+                                <p>$ {courses.price}</p>
+                                <Link to={`/course/checkout/${courses.id}`} className=''>
+                                    <button type="button" class="btn btn-outline-dark">Get premium access</button>
+                                </Link>
                             </div>
                         </div>
                     </div>

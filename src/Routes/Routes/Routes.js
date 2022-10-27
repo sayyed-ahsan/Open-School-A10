@@ -8,6 +8,8 @@ import Login from "../../pages/Login/Login";
 import Rejister from "../../pages/Login/Rejister";
 import Home from "../../Home/Home";
 import PageNotFound from "../../pages/PageNotFound/PageNotFound";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import CheckOut from "../../pages/Course/CheckOut/CheckOut";
 
 export const routes = createBrowserRouter([
     {
@@ -49,6 +51,11 @@ export const routes = createBrowserRouter([
             {
                 path: '/course/deatils/:id',
                 element: <CourseDetails></CourseDetails>,
+                loader: ({ params }) => fetch(`https://assignment-10-server-sayyed-ahsan.vercel.app/coursedetail/${params.id}`),
+            },
+            {
+                path: '/course/checkout/:id',
+                element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
                 loader: ({ params }) => fetch(`https://assignment-10-server-sayyed-ahsan.vercel.app/coursedetail/${params.id}`),
             }
         ]
